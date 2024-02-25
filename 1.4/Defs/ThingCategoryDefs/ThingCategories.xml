@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>RI_Category_RI</defName>
+    <label>边缘仙路</label>
+    <parent>Root</parent>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+    <iconPath>UI/Icons/ThingCategories/Foods</iconPath>
+  </ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>RI_Category_Resource</defName>
+		<label>原料</label>
+		<parent>RI_Category_RI</parent>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+		<iconPath>UI/Icons/ThingCategories/FoodMeals</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>RI_Category_Drugs</defName>
+		<label>丹药</label>
+		<parent>RI_Category_RI</parent>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+		<iconPath>UI/Icons/ThingCategories/FoodMeals</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>RI_Category_DrugsMaterials</defName>
+		<label>药材</label>
+		<parent>RI_Category_RI</parent>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+		<iconPath>UI/Icons/ThingCategories/FoodMeals</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>RI_Category_AnimalProductRaw</defName>
+		<label>灵兽素材</label>
+		<parent>RI_Category_RI</parent>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+		<iconPath>UI/Icons/ThingCategories/FoodMeals</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>RI_Category_Books</defName>
+		<label>书籍</label>
+		<parent>RI_Category_RI</parent>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+		<iconPath>UI/Icons/ThingCategories/FoodMeals</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>RI_Category_Special</defName>
+		<label>特殊</label>
+		<parent>RI_Category_RI</parent>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+		<iconPath>UI/Icons/ThingCategories/FoodMeals</iconPath>
+	</ThingCategoryDef>
+
+</Defs>

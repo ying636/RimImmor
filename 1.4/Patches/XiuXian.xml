@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[category = "Pawn"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[category = "Pawn"]/inspectorTabs</xpath>
+      <value>
+        <li>WhoXiuXian.ITab_XiuXian</li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

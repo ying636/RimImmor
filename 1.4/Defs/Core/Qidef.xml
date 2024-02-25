@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <Core.RimImmortalDef>
+    <defName>RI_Sinsack</defName>
+    <label>凡人</label>
+    <level>0</level><!--这个境界在这条修炼路线里是第几级-->
+    <MaxEnergy>10</MaxEnergy><!--这个境界最多拥有多少灵气,达到后再想增加必须突破-->
+    <MinEnergy>0</MinEnergy><!--达到这个境界最低要拥有多少灵气-->
+    <EXP>10</EXP>
+    <tags>
+    <li>Qi</li>
+    </tags><!--修炼体系,Qi为灵气修炼体系，后期通过修改tags增加修炼的方式-->
+  </Core.RimImmortalDef>
+
+   <Core.RimImmortalDef>
+    <defName>RI_Training</defName>
+    <label>练气</label>
+    <level>1</level><!--这个境界在这条修炼路线里是第几级-->
+    <MaxEnergy>200</MaxEnergy><!--这个境界最多拥有多少灵气,达到后再想增加必须突破，必须大于最小值-->
+    <MinEnergy>1</MinEnergy><!--达到这个境界最低要拥有多少灵气-->
+    <EXP>100</EXP><!--决定修炼到下一境界的经验值，不能为零-->
+    <LevelBuff>RI_Training_Buff</LevelBuff><!--没有则不填,例如凡人就没有这一项，实际为hediifdef-->
+    <tags>
+    <li>Qi</li><!--修炼体系,Qi为灵气修炼体系，后期通过修改tags增加修炼的方式-->
+    </tags>
+  </Core.RimImmortalDef>
+
+  <HediffDef>
+    <defName>RI_Training_Buff</defName>
+    <label>丹田(练气)</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>练气期的真气对你身体进行了改善,使你的身体素质变得更强</description>
+    <stages>
+      <li>
+        <painFactor>0.95</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <isBad>false</isBad>
+  </HediffDef>
+  
+  <Core.RimImmortalDef>
+    	<defName>RI_BaseBuding</defName>
+    	<label>筑基</label>
+    	<level>2</level>
+    	<MaxEnergy>500</MaxEnergy>
+    	<MinEnergy>190</MinEnergy>
+        <EXP>200</EXP>
+    	<LevelBuff>RI_BaseBuding_Buff</LevelBuff>
+         <tags>
+        <li>Qi</li>
+        </tags>
+  </Core.RimImmortalDef>
+
+  <HediffDef>
+		<defName>RI_BaseBuding_Buff</defName>
+		<label>丹田(筑基)</label>
+		<hediffClass>HediffWithComps</hediffClass>
+		<description>筑基期，真气更为浓厚,属性全方位略微提高。</description>
+		<isBad>false</isBad>
+	</HediffDef>
+
+</Defs>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+ <JobDef>
+    <defName>InstallEnergyRoot</defName>
+    <driverClass>JobDriver_UseItem</driverClass>
+    <reportString>installing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RemoveEnergyRoot</defName>
+    <driverClass>JobDriver_RemoveMechlink</driverClass>
+  </JobDef>
+
+	<ThingDef ParentName="MechanitorImplantBase">
+		<defName>EnergyRoot</defName>
+		<label>EnergyRoot</label>
+		<description>灵芽是一个绿豆大小的良性神经瘤，位于前额叶内部，几乎所有人都有这个器官，但已经退化到基本不存在，只有极少数人还保留了此器官，其中更少一部分人的这个器官还处于活跃状态。</description>
+		<graphicData>
+			<texPath>Things/Health/EnergyRoot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>transplant EnergyRoot</RecipeDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MarketValue>0</MarketValue>
+			<Mass>2.5</Mass>
+		</statBases>
+		<comps>
+        <li Class="CompProperties_Forbiddable"/>
+		<li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>InstallEnergyRoot</useJob>
+        <useLabel>Install {0_label} to become imbecile</useLabel>
+        </li>
+		<li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>Hediff_RI_EnergyRoot</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>flase</requiresPsychicallySensitive>
+      </li>
+	    </comps>
+	</ThingDef>
+	
+	<HediffDef>
+    <defName>Hediff_RI_EnergyRoot</defName>
+    <label>灵芽</label>
+    <hediffClass>Core.Hediff_RI_EnergyRoot</hediffClass>
+    <description>其实是灵根,修炼的基础</description>
+    <stages>
+      <li>
+        <label>下品</label>
+        <statFactors>
+          <GI_EnergyGainEff>0.8</GI_EnergyGainEff>
+        </statFactors>
+      </li>
+      <li>
+        <label>中品</label>
+        <minSeverity>0.49</minSeverity>
+      </li>
+      <li>
+        <label>上品</label>
+        <minSeverity>0.99</minSeverity>
+        <statFactors>
+          <GI_EnergyGainEff>1.3</GI_EnergyGainEff>
+        </statFactors>
+      </li>
+    </stages>
+    <isBad>false</isBad>
+  </HediffDef>
+</Defs>

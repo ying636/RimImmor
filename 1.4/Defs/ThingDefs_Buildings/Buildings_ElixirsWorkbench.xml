@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--工作Base添加-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsCook"]/fixedBillGiverDefs</xpath>
+		<value>
+			<li>RI_Building_ElixirsWorkbench</li>
+		</value>
+	</Operation>
+
+	<WorkGiverDef>
+		<defName>RI_MedicalMake</defName>
+		<label>炮制药材</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Doctor</workType>
+		<priorityInType>100</priorityInType>
+		<fixedBillGiverDefs>
+			<li>RI_Building_ElixirsWorkbench</li>
+		</fixedBillGiverDefs>
+		<verb>cook</verb>
+		<gerund>炮制药材在</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<ThingDef ParentName="BenchBase">
+		<defName>RI_Building_ElixirsWorkbench</defName>
+		<label>丹药工作台</label>
+		<description>一张用来制备一些药方和药粉的工作台。</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<graphicData>
+			<texPath>Things/Building/ElixirsWorkbench/RI_Building_ElixirsWorkbench</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2.2,1)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costStuffCount>50</costStuffCount>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+		</stuffCategories>
+		<costList>
+			<Steel>20</Steel>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>3000</WorkToBuild>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(2,1)</size>
+		<designationCategory>RI_RimImmortals_Group</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<paintable>true</paintable>
+		</building>
+		<comps>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>RI_Building_MedicinalMaterialShelf</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>DrugProduction</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>RI_Building_MedicinalMaterialShelf</defName>
+		<label>药材柜</label>
+		<description>Increases work speed when placed near a workbench. One workbench can use up to two tool cabinets.</description>
+		<graphicData>
+			<texPath>Things/Building/MedicinalMaterialShelf/RI_Building_MedicinalMaterialShelf</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.35</staticSunShadowHeight>
+		<fillPercent>0.5</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>42</pathCost>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<costStuffCount>50</costStuffCount>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+		</stuffCategories>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<designationCategory>RI_RimImmortals_Group</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<WorkTableWorkSpeedFactor>0.05</WorkTableWorkSpeedFactor>
+				</statOffsets>
+				<maxSimultaneous>3</maxSimultaneous>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+	
+</Defs>

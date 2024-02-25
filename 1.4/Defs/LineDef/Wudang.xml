@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef>
+    <defName>RI_FindEnergy_Book_WuDang</defName>
+    <label>武当练气功</label>
+    <description>一本武当派的修炼启蒙书,可以帮助有修炼天赋的人踏上修炼之路.</description>
+    <descriptionHyperlinks><WhoXiuXian.LineDef>RI_WuDangPai</WhoXiuXian.LineDef></descriptionHyperlinks>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <techLevel>Archotech</techLevel>
+    <useHitPoints>true</useHitPoints>
+    <pathCost>14</pathCost>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Never</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <thingCategories>
+      <li>ItemsImm</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <Mass>1</Mass>
+      <MarketValue>2600</MarketValue>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Special/PsylinkNeuroformer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tradeTags>
+      <li>PsylinkNeuroformer</li>
+    </tradeTags>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>阅读秘籍</useLabel>
+      </li>
+      <li Class="WhoXiuXian.CompProperties_UseGongFaBook">
+        <lineDef>RI_WuDangPai</lineDef>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+  
+  
+  <ThingCategoryDef>
+    <defName>ItemsImm</defName>
+    <label>修炼书籍</label>
+    <parent>Items</parent>
+  </ThingCategoryDef>
+
+
+  <WhoXiuXian.LineDef>
+    <defName>RI_WuDangPai</defName>
+    <label>武当派</label>
+		<description>武当派,也称捂裆派,奉行中庸之道</description>
+    <descriptionHyperlinks>
+      <AbilityDef>LongjumpMech</AbilityDef>
+      <HediffDef>RI_FaMen_WuDang_I</HediffDef>
+    </descriptionHyperlinks>
+    <Skill>
+      <LongjumpMech>1</LongjumpMech>
+    </Skill>
+    <Buff>
+      <RI_FaMen_WuDang_I>1</RI_FaMen_WuDang_I>
+    </Buff>
+  </WhoXiuXian.LineDef>
+
+  <HediffDef>
+    <defName>RI_FaMen_WuDang_I</defName>
+    <label>武当心经</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>武当派最基础的心法,不仅能够提升修炼速度,还可以一定程度的提升劳动能力</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <GI_EnergyGainEff>0.3</GI_EnergyGainEff>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  
+</Defs>

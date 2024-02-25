@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="BuildingBase">
+    <defName>RI_Building_CrystalVeinDetector</defName>
+    <label>灵脉透镜</label>
+    <description>透镜TJ</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/GroundPenetratingScanner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.65</drawSize>
+      <drawRotated>false</drawRotated>
+      <drawOffset>(0,0,-0.05)</drawOffset>
+      <shadowData>
+        <volume>(1.6875, 0.375, 2.125)</volume>
+        <offset>(0,0,-0.12)</offset>
+      </shadowData>
+    </graphicData>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>700</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="WhoXiuXian.RI_Ability.Comps.CompProperties_Detection">
+        <detectionPath>Icons/512</detectionPath>
+      </li>
+      <li Class="WhoXiuXian.RI_Ability.Comps.CompProperties_LZScaner">
+        <scanSpeedStat>ResearchSpeed</scanSpeedStat>
+        <scanFindMtbDays>3</scanFindMtbDays>
+        <scanFindGuaranteedDays>6</scanFindGuaranteedDays>
+        <soundWorking>ScannerGroundPenetrating_Ambience</soundWorking>
+      </li>
+    </comps>
+    <altitudeLayer>Building</altitudeLayer>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>12000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <interactionCellIcon>DiningChair</interactionCellIcon>
+    <interactionCellIconReverse>true</interactionCellIconReverse>
+    <fillPercent>0.40</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <designationCategory>Misc</designationCategory>
+    <rotatable>true</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3,3)</size>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <defaultPlacingRot>South</defaultPlacingRot>  <!-- to match long range mineral scanner -->
+    <researchPrerequisites>
+      <li>GroundPenetratingScanner</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>CrystalVein</defName>
+    <label>CrystalVein</label>
+    <description>CrystalVein</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Plasteel</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MarketValue>9</MarketValue>
+      <Mass>0.25</Mass>
+      <StuffPower_Armor_Sharp>1.14</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.55</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.65</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>3</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>0</StuffPower_Insulation_Heat>
+      <SharpDamageMultiplier>1.1</SharpDamageMultiplier>
+      <BluntDamageMultiplier>0.9</BluntDamageMultiplier>
+    </statBases>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <deepCommonality>1</deepCommonality>
+    <deepCountPerPortion>10</deepCountPerPortion>
+    <deepLumpSizeRange>2~10</deepLumpSizeRange>
+    <burnableByRecipe>false</burnableByRecipe>
+    <smeltable>true</smeltable>
+    <stuffProps>
+      <categories>
+        <li>Metallic</li>
+      </categories>
+      <appearance>Metal</appearance>
+      <commonality>0.05</commonality>
+      <constructEffect>ConstructMetal</constructEffect>
+      <color>(160,178,181)</color>
+      <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>2.8</MaxHitPoints>
+        <Beauty>1</Beauty>
+        <Flammability>0</Flammability>
+        <WorkToMake>2.2</WorkToMake>
+        <WorkToBuild>2.2</WorkToBuild>
+        <MeleeWeapon_CooldownMultiplier>0.8</MeleeWeapon_CooldownMultiplier>
+      </statFactors>
+    </stuffProps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <allowedArchonexusCount>80</allowedArchonexusCount>
+  </ThingDef>
+  </Defs>

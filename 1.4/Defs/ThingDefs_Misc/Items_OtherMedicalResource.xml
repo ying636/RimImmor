@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>RI_Resource_GoldSand</defName>
+		<label>金砂</label>
+		<description>一种药材。将黄金磨碎成砂粉后，混入丹药服用。黄金是一种稳定的贵金属，在古代也曾被当作药材使用，但其实并无效果。但对于修炼者来说，却可以帮助体内的灵气恢复，其原理无人知晓。</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawMedical/RI_Resource_GoldSand</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Grain_Drop</soundInteract>
+		<soundDrop>Grain_Drop</soundDrop>
+		<stackLimit>75</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>25</MarketValue>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>0.05</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>RI_Category_DrugsMaterials</li>
+		</thingCategories>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>RI_Resource_ElephantTuskPowder</defName>
+		<label>象牙粉</label>
+		<description>一种药材。</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawMedical/RI_Resource_ElephantTuskPowder</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Grain_Drop</soundInteract>
+		<soundDrop>Grain_Drop</soundDrop>
+		<stackLimit>75</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>22</MarketValue>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>0.05</Mass>
+			<Flammability>0.8</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>RI_Category_DrugsMaterials</li>
+		</thingCategories>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+  
+</Defs>

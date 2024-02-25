@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--工作Base添加-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/WorkGiverDef[defName="DoBillsCook"]/fixedBillGiverDefs</xpath>
+		<value>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</value>
+	</Operation>
+
+	<WorkGiverDef>
+		<defName>RI_DanMake</defName>
+		<label>炼制丹药</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Doctor</workType>
+		<priorityInType>100</priorityInType>
+		<fixedBillGiverDefs>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</fixedBillGiverDefs>
+		<verb>cook</verb>
+		<gerund>炼制丹药</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<!--<li>RI_Building_LittleCauldrons</li>-->
+	<RecipeDef Name="RI_RecipeBase_withDanStove" Abstract="True">
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<workSkill>Intellectual</workSkill>
+	</RecipeDef>
+
+	<!--以下为丹药-->
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_HealBalm</defName>
+		<label>【三品】跌打膏</label>
+		<description>三品丹药，一种棕黑的膏药，气味清凉，可以敷在伤口上，有比草药更好的治疗效果。曾经这种药的药效一直受到人的诟病，但无法否认的是，它同时也对许多跌打损伤有治疗效果。随着后人的不断改良，并在配方中加入车前子，这种膏药最终成为优于草药的外敷药，并被大众接受。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_HealBalm</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>23</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Standard_Drop</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>涂抹 {0}</ingestCommandString>
+			<ingestReportString>涂抹 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_DiedagaoHediff</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<costList>
+			<RI_Resource_PlantainSeed>1</RI_Resource_PlantainSeed>
+			
+		</costList>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeHealBalm</defName>
+		<label>熬制跌打膏</label>
+		<description>三品丹药，一种棕黑的膏药，气味清凉，可以敷在伤口上，有比草药更好的治疗效果。曾经这种药的药效一直受到人的诟病，但无法否认的是，它同时也对许多跌打损伤有治疗效果。随着后人的不断改良，并在配方中加入车前子，这种膏药最终成为优于草药的外敷药，并被大众接受。</description>
+		<jobString>熬制跌打膏中。</jobString>
+		<workAmount>600</workAmount>
+		<recipeUsers>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_PlantainSeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MedicineHerbal</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>	
+		</ingredients>
+		<products>
+			<RI_Drug_HealBalm>1</RI_Drug_HealBalm>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_BloodSavingPill</defName>
+		<label>【三品】活血丸</label>
+		<description>三品丹药，味道微苦，服用后可以增强血液循环，加速治愈。相传，古代一名医师在进山寻找草药时，遇到一群生活在山中的流民。流民们将这种灵芝和车前子捣碎熬制成丸的药方教给了医师。医师学会后，将这药方传给了一代代后人，一直流传到更加先进的医药将之代替为止。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_BloodSavingPill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_GreenBalmHediff</hediffDef>
+					<severity>3</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeBloodSavingPill</defName>
+		<label>炼制活血丸</label>
+		<description>炼制具有短暂增强呼吸能力和新陈代谢功能的药丸。</description>
+		<jobString>炼制活血丸中。</jobString>
+		<workAmount>600</workAmount>
+		<recipeUsers>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_PlantainSeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_LingZhi</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_BloodSavingPill>1</RI_Drug_BloodSavingPill>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_HerbPowder</defName>
+		<label>【二品】回春散</label>
+		<description>二品丹药，一种淡绿色的药粉，可以增强对各种疾病的免疫力，止痛。这种药粉的效果很好，秘诀就在于将所有的原材料都烘干成粉后混合，由于其价格高昂，但药效很好，经常被富贵人家用来作为孕妇的保胎药。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_HerbPowder</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_HerbPowderHediff</hediffDef>
+					<severity>1.0</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeHerbPowder</defName>
+		<label>配制回春散</label>
+		<description>配制回春散</description>
+		<jobString>配制回春散中。</jobString>
+		<workAmount>600</workAmount>
+		<recipeUsers>
+			<li>RI_Building_ElixirsWorkbench</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_LingZhi</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_PlantainSeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_ElephantTuskPowder</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_HerbPowder>1</RI_Drug_HerbPowder>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_LingYunPill</defName>
+		<label>【三品】凌云丸</label>
+		<description>三品丹药，味道奇甜无比，宛若蜜糖，可以短暂提升移速。这种药丸的来源成谜，不知何时起便流传于民间。但大部分人都认为，以火龙芽的刺激和银芯参的滋补，让人体在短时间内脱水并且维持肌肉，来提高运动能力，也并非毫无逻辑。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_LingYunPill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_FloatingCloudHediff</hediffDef>
+					<severity>3</severity>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_ShadowWithMove</hediffDef>
+					<severity>3</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeLingYunPill</defName>
+		<label>炼制凌云丸</label>
+		<description>炼制凌云丸</description>
+		<jobString>炼制凌云丸中。</jobString>
+		<workAmount>600</workAmount>
+		<recipeUsers>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_SilverGinseng</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_TillandsiaDragonShoot</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_LingYunPill>1</RI_Drug_LingYunPill>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_ThreeRockPowder</defName>
+		<label>【三品】三石散</label>
+		<description>三品丹药，一种灰色药粉，味道微酸。是一种在武行间非常受推崇的药粉，以少量火龙草和灵芝，加入石粉调制而成。服用后会刺激心脏，使人热血上涌，提高战斗表现。但也是因为其特性，被男人追捧为神药。这也导致了假货频出，有许多人吃三石散中毒的事例。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_ThreeRockPowder</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_ThreeRockPowderHediff</hediffDef>
+					<severity>3</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<costList>
+			<WoodLog>1</WoodLog>
+		</costList>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeThreeRockPowder</defName>
+		<label>配制三石散</label>
+		<description>配制三石散</description>
+		<jobString>配制三石散中。</jobString>
+		<workAmount>600</workAmount>
+		<recipeUsers>
+			<li>RI_Building_ElixirsWorkbench</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_TillandsiaDragonShoot</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_LingZhi</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_ThreeRockPowder>1</RI_Drug_ThreeRockPowder>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_StrongPhysiquePowder</defName>
+		<label>【三品】固元散</label>
+		<description>长期提高灵气的吸收效率</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_StrongPhysiquePowder</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_SolidEnergyPowderHediff</hediffDef>
+					<severity>3</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeStrongPhysiquePowder</defName>
+		<label>配制固元散</label>
+		<description>配制固元散</description>
+		<jobString>配制固元散中。</jobString>
+		<workAmount>600</workAmount>
+		<recipeUsers>
+			<li>RI_Building_ElixirsWorkbench</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_GoldSand</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_DuskyMushroom</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_StrongPhysiquePowder>1</RI_Drug_StrongPhysiquePowder>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_CultivateEnergyPill</defName>
+		<label>【二品】培灵丸</label>
+		<description>短暂让使用的灵气消耗减少</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_CultivateEnergyPill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_CultivateEnergyHediff</hediffDef>
+					<severity>3</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeCultivateEnergyPill</defName>
+		<label>炼制培灵丸</label>
+		<description>炼制培灵丸</description>
+		<jobString>炼制培灵丸中。</jobString>
+		<workAmount>1800</workAmount>
+		<recipeUsers>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_DuskyMushroom</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_LanternBerries</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_CultivateEnergyPill>1</RI_Drug_CultivateEnergyPill>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_GreenBalm</defName>
+		<label>【三品】清风膏</label>
+		<description>三品丹药，是一种绿色油膏，气味清凉，味道极苦，可以清除疲劳。用油浸泡雪莲和蘑菇，加入多种香料，最后萃取出来的液体。对人体有多种功效，如清热解毒等，但因其清凉的气味，最出名的功效还是用来提神醒脑，驱散困意。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_GreenBalm</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>涂抹 {0}</ingestCommandString>
+			<ingestReportString>涂抹 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_GreenPowderHediff</hediffDef>
+					<severity>3</severity>
+				</li>
+				<li Class="IngestionOutcomeDoer_OffsetNeed">
+					<need>Rest</need>
+					<offset>1.0</offset>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeGreenBalm</defName>
+		<label>熬制清风膏</label>
+		<description>熬制清风膏</description>
+		<jobString>熬制清风膏中。</jobString>
+		<workAmount>800</workAmount>
+		<recipeUsers>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_SnowLotus</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_SilverGinseng</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_GreenBalm>1</RI_Drug_GreenBalm>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_AllCropsPill</defName>
+		<label>【三品】百粮丸</label>
+		<description>三品丹药，味道极苦微酸，可以消除饥饿。根据史书记载，是一名城主独自研究出来，用来给行军打仗的士兵填饱肚子的药丸，将菇和灵芝烘干磨碎，加入油脂，以重物压成小丸。这种药丸入腹后会逐渐膨胀，行军的士兵吃上两颗，便能饱腹。一段时日后士兵们陆续发现这种药丸会导致便秘，所以逐渐停止服用，而转变成抗震救灾的应急食物。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_AllCropsPill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>5</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_StomachFillHediff</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeAllCropsPill</defName>
+		<label>炼制百粮丸</label>
+		<description>炼制百粮丸</description>
+		<jobString>炼制百粮丸中。</jobString>
+		<workAmount>1800</workAmount>
+		<recipeUsers>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_LingZhi</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RawRice</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_SilverGinseng</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_AllCropsPill>1</RI_Drug_AllCropsPill>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_ExpelHotPill</defName>
+		<label>【二品】玄寒丸</label>
+		<description>二品丹药，味道清凉微苦，可以清除中暑。相传是在大旱年间，一名行商以随身携带来自北方极寒之地的雪莲和少见的仙馐果为原材料，调制出的一种药丸。吃下去后凉气入体，清除酷暑，挽救了许多人的生命，行商也以此赚得盆满钵满。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_ExpelHotPill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_HypothermiaGoAwayHediff</hediffDef>
+					<severity>3</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeExpelHotPill</defName>
+		<label>炼制玄寒丸</label>
+		<description>炼制玄寒丸</description>
+		<jobString>炼制玄寒丸中。</jobString>
+		<workAmount>1800</workAmount>
+		<recipeUsers>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_SnowLotus</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_DuskyMushroom</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_LingZhi</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_ExpelHotPill>1</RI_Drug_ExpelHotPill>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RI_Drug_ExpelColdPill</defName>
+		<label>【二品】炙风丸</label>
+		<description>二品丹药，味道辛辣微甜，可以清除低温症。以仙馐果来平衡火龙芽的强烈药性，吃下后如有一丝烈酒入喉，一路烧到胃里。热力渗入四肢，使人能暂时抵御严寒。</description>
+		<graphicData>
+			<texPath>Things/Item/Drugs/RI_Drug_ExpelColdPill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Nutrition>0.01</Nutrition>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>53</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<preferability>NeverForNutrition</preferability>
+			<ingestCommandString>服用 {0}</ingestCommandString>
+			<ingestReportString>服用 {0} 中</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>RI_SunstrokeGoAwayHediff</hediffDef>
+					<severity>3</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>GoJuiceProduction</researchPrerequisite>
+			<soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<costList>
+			<WoodLog>1</WoodLog>
+		</costList>
+		<thingCategories>
+			<li>RI_Category_Drugs</li>
+		</thingCategories>
+	</ThingDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_withDanStove">
+		<defName>RI_MakeExpelColdPill</defName>
+		<label>炼制炙风丸</label>
+		<description>炼制炙风丸</description>
+		<jobString>炼制炙风丸中。</jobString>
+		<workAmount>1800</workAmount>
+		<recipeUsers>
+			<li>RI_Building_LittleCauldrons</li>
+			<li>RI_Building_Cauldrons</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_TillandsiaDragonShoot</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_LanternBerries</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RI_Resource_LingZhi</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Drug_ExpelColdPill>1</RI_Drug_ExpelColdPill>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+</Defs>
+
+

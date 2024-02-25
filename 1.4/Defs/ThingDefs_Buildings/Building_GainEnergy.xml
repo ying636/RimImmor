@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>RI_Building_CultivationSpot</defName>
+    <label>修炼点</label>
+    <description>一个用于打坐的修炼点,修炼者可以通过修炼来吸收灵气,可以在附近放置提高灵气获取效率的特殊建筑。</description>
+	  <thingClass>WhoXiuXiWhoXiuXian.Core.RI_Building_CultivationSpot</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Cultivation/RI_Building_CultivationSpot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+    </statBases>
+    <rotatable>false</rotatable>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>False</useHitPoints>
+    <designationCategory>RI_RimImmortals_Group</designationCategory>
+    <uiOrder>2000</uiOrder>
+    <passability>Standable</passability>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <building>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <comps>
+      <li Class="CompProperties_UsesMeditationFocus"/>
+    </comps>
+  </ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>RI_Building_UpgradeSpot</defName>
+		<label>突破点</label>
+		<description>一个用于突破的位置。</description>
+		<thingClass>WhoXiuXian.Core.Building_RI_Futon</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Cultivation/RI_Building_UpgradeSpot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+		</statBases>
+		<rotatable>false</rotatable>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+		<useHitPoints>False</useHitPoints>
+		<designationCategory>RI_RimImmortals_Group</designationCategory>
+		<uiOrder>2000</uiOrder>
+		<passability>Standable</passability>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<building>
+			<sowTag>SupportPlantsOnly</sowTag>
+			<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+			<ai_chillDestination>false</ai_chillDestination>
+			<wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+		</building>
+		<comps>
+			<li Class="CompProperties_UsesMeditationFocus"/>
+		</comps>
+	</ThingDef>
+
+  <WorkGiverDef>
+    <defName>RI_OnFuton</defName>
+    <label>修炼</label>
+    <giverClass>Core.WorkGiver_RI_OnFuton</giverClass>
+    <workType>RI_OnFuton</workType>
+    <priorityInType>80</priorityInType>
+    <verb>修炼</verb>
+    <gerund>修炼</gerund>
+    <!-- <requiredCapacities>
+      <li>Moving</li>
+    </requiredCapacities> -->
+	 <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+   
+  <WorkTypeDef>
+    <defName>RI_OnFuton</defName>
+    <labelShort>修炼</labelShort>
+    <pawnLabel>修炼者</pawnLabel>
+    <gerundLabel>修炼</gerundLabel>
+    <description>这类工作可以强化修炼者,为非生产产出.</description>
+    <verb>修炼于</verb>
+    <naturalPriority>10</naturalPriority>
+    <workTags>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+  
+  <JobDef>
+    <defName>RI_OnFuton</defName>
+    <driverClass>Core.JobDriver_RI_OnFuton</driverClass>
+    <reportString>打坐中.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+
+</Defs>

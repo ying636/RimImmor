@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<FleckDef ParentName="FleckBase_Thrown">
+    <defName>CoolPawnShadow</defName>
+    <graphicData>
+      <texPath>Things/Mote/FireGlow</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.54</solidTime>
+    <fadeOutTime>0.2</fadeOutTime>
+  </FleckDef>
+
+    <ThingDef ParentName="MoteBase">
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <defName>Mote_CoolPawnShadow</defName>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.54</solidTime>
+    <fadeOutTime>0.2</fadeOutTime>
+      <needsMaintenance>false</needsMaintenance>
+    </mote>
+    <graphicData>
+      <drawSize>1.1</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+      <color>(0, 0, 0, 0)</color>
+      <texPath>Things/Mote/FireGlow</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </ThingDef>
+  
+  </Defs>

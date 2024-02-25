@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>RI_Animal_JueRu</defName>
+		<label>玃如</label>
+		<devNote>cow-1</devNote>
+		<description>西方有兽焉，如鹿白尾，马足人手四角。其名曰玃如。</description>
+		<statBases>
+			<MoveSpeed>7</MoveSpeed>
+			<MarketValue>1400</MarketValue>
+			<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+			<FilthRate>16</FilthRate>
+		</statBases>
+		<uiIconScale>2</uiIconScale>
+		<comps>
+			<li Class="CompProperties_Milkable">
+				<milkDef>Milk</milkDef>
+				<milkIntervalDays>25</milkIntervalDays>
+				<milkAmount>2</milkAmount>
+			</li>
+		</comps>
+		<race>
+			<body>QuadrupedAnimalWithHooves</body>
+			<herdAnimal>true</herdAnimal>
+			<baseBodySize>1.0</baseBodySize>
+			<baseHealthScale>2.0</baseHealthScale>
+			<baseHungerRate>0.275</baseHungerRate>
+			<foodType>VegetarianRoughAnimal</foodType>
+			<leatherDef>Leather_Plain</leatherDef>
+			<wildness>0.75</wildness>
+			<roamMtbDays>2</roamMtbDays>
+			<manhunterOnDamageChance>0</manhunterOnDamageChance>
+			<gestationPeriodDays>6.66</gestationPeriodDays>
+			<lifeExpectancy>80</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>AnimalBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>AnimalJuvenile</def>
+					<minAge>0.5</minAge>
+				</li>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>1</minAge>
+					<soundWounded>Pawn_Elk_Wounded</soundWounded>
+					<soundDeath>Pawn_Elk_Death</soundDeath>
+					<soundCall>Pawn_Elk_Call</soundCall>
+					<soundAngry>Pawn_Elk_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+			<headPosPerRotation>
+				<li>(0.0, 0, 0.1)</li>
+				<li>(0.16, 0, 0.03)</li>
+				<li>(0.0, 0, -0.02)</li>
+				<li>(-0.16, 0, 0.03)</li>
+			</headPosPerRotation>
+		</race>
+		<tradeTags>
+			<li>AnimalCommon</li>
+			<li>AnimalFarm</li>
+		</tradeTags>
+		<tools>
+			<li>
+				<label>left hoof</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right hoof</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<chanceFactor>0.5</chanceFactor>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>RI_Animal_JueRu</defName>
+		<label>玃如</label>
+		<labelPlural>玃如</labelPlural>
+		<race>RI_Animal_JueRu</race>
+		<combatPower>180</combatPower>
+		<ecoSystemWeight>0.5</ecoSystemWeight>
+		<wildGroupSize>3~4</wildGroupSize>
+		<lifeStages>
+			<li>
+				<label>elk calf</label>
+				<labelPlural>elk calves</labelPlural>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/JueRuFemale</texPath>
+					<drawSize>1.5</drawSize>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/Dessicated_JueRuFemale</texPath>
+					<drawSize>1.5</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/JueRuMale</texPath>
+					<drawSize>2.30</drawSize>
+					<shadowData>
+						<volume>(0.375, 0.375, 0.375)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/JueRuFemale</texPath>
+					<drawSize>2.20</drawSize>
+					<shadowData>
+						<volume>(0.375, 0.375, 0.375)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</femaleGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/Dessicated_JueRuMale</texPath>
+					<drawSize>2.3</drawSize>
+				</dessicatedBodyGraphicData>
+				<femaleDessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/Dessicated_JueRuFemale</texPath>
+					<drawSize>2.2</drawSize>
+				</femaleDessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/JueRuMale</texPath>
+					<drawSize>3.1</drawSize>
+					<shadowData>
+						<volume>(0.5, 0.5, 0.5)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/JueRuFemale</texPath>
+					<drawSize>2.95</drawSize>
+					<shadowData>
+						<volume>(0.5, 0.5, 0.5)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</femaleGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/Dessicated_JueRuMale</texPath>
+					<drawSize>3.1</drawSize>
+				</dessicatedBodyGraphicData>
+				<femaleDessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/JueRu/Dessicated_JueRuFemale</texPath>
+					<drawSize>2.95</drawSize>
+				</femaleDessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+  
+</Defs>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef Name="LZPlant" ParentName="PlantBase">
+    <defName>RI_Plant_LingZhi</defName>
+    <label>灵芝</label>
+    <description>灵芝是一种富含营养的真菌。在灵气充盈的土地上能更快的生长，是一种少见的药材。</description>
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.25</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RI_Plant_LingZhi</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <fertilitySensitivity>0.4</fertilitySensitivity>
+      <dieIfLeafless>true</dieIfLeafless>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>RawPotatoes</harvestedThingDef>
+      <harvestYield>11</harvestYield>
+      <sowTags>
+        <li>SoilSpiritual</li>
+      </sowTags>
+      <topWindExposure>0.1</topWindExposure>
+      <growDays>5.8</growDays>
+      <visualSizeRange>0.3~1.05</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+      <humanFoodPlant>true</humanFoodPlant>
+    </plant>
+  </ThingDef>
+
+  <ThingDef Name="XZPlant" ParentName="PlantBase">
+    <defName>RI_Plant_SnowLotus</defName>
+    <label>雪莲</label>
+    <description>雪莲是一种富含生命力的植物，这种植物的花朵被称为雪莲，是一种极罕见的药材。</description>
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.25</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RI_Plant_SnowLotus</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <fertilitySensitivity>0.4</fertilitySensitivity>
+      <dieIfLeafless>true</dieIfLeafless>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>RawPotatoes</harvestedThingDef>
+      <harvestYield>11</harvestYield>
+      <sowTags>
+        <li>SoilSpiritual</li>
+      </sowTags>
+      <topWindExposure>0.1</topWindExposure>
+      <growDays>15</growDays>
+      <visualSizeRange>0.3~1.05</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+      <humanFoodPlant>true</humanFoodPlant>
+    </plant>
+  </ThingDef>
+
+   <ThingDef ParentName="PlantBase">
+    <defName>RI_Plant_SilverGinseng</defName>
+    <label>银芯参</label>
+    <description>银芯参是一种富含矿物质的植物，能吸收土地中的营养，在灵气充盈的土地上能更快地生长。</description>
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RI_Plant_SilverGinseng</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <growDays>4.6</growDays>
+      <dieIfLeafless>true</dieIfLeafless>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>RawBerries</harvestedThingDef>
+      <harvestYield>8</harvestYield>
+      <sowMinSkill>5</sowMinSkill>
+      <sowTags>
+       <li>SoilSpiritual</li>
+      </sowTags>
+      <topWindExposure>0.1</topWindExposure>
+      <immatureGraphicPath>Things/Plant/StrawberryPlant_Immature</immatureGraphicPath>
+      <visualSizeRange>0.3~1.05</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+      <humanFoodPlant>true</humanFoodPlant>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="CavePlantBase">
+    <defName>RI_Plant_DuskyMushroom</defName>
+    <label>玄阴菇</label>
+    <description>玄阴菇是一种只能生长在黑暗地带的蘑菇，生长非常缓慢。</description>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Beauty>4</Beauty>
+      <BeautyOutdoors>4</BeautyOutdoors>
+      <Nutrition>0.75</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RI_Plant_DuskyMushroom</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shadowData>
+        <volume>(0.2, 0.3, 0.13)</volume>
+        <offset>(-0.03,0,-0.44)</offset>
+      </shadowData>
+    </graphicData>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>30</pathCost>
+    <ingestible />
+    <plant>
+      <fertilityMin>0.01</fertilityMin>
+      <fertilitySensitivity>0.15</fertilitySensitivity>
+      <growDays>60</growDays>
+      <dieIfLeafless>true</dieIfLeafless>
+      <harvestYield>35</harvestYield>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>RawFungus</harvestedThingDef>
+      <neverBlightable>true</neverBlightable>
+      <visualSizeRange>0.9~1.5</visualSizeRange>
+      <topWindExposure>0.1</topWindExposure>
+      <cavePlantWeight>0.17</cavePlantWeight>
+      <purpose>Food</purpose>
+      <pollution>Any</pollution>
+    </plant>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(23,15,30,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="HealrootBase">
+    <defName>RI_Plant_Plantain</defName>
+    <label>车前草</label>
+	  <graphicData>
+		  <texPath>Things/Plant/RI_Plant_Plantain</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		  <shadowData>
+			  <volume>(0.2, 0.6, 0.2)</volume>
+		  </shadowData>
+	  </graphicData>
+    <description>车前草是一种较为常见的药草，这种药草在灵气充盈的土地上能更快的生长。</description>
+    <plant>
+      <growDays>7</growDays>
+      <sowWork>800</sowWork>
+      <sowMinSkill>8</sowMinSkill>
+      <sowTags>
+       <li>SoilSpiritual</li>
+      </sowTags>
+      <purpose>Health</purpose>
+    </plant>
+  </ThingDef>
+
+<ThingDef ParentName="PlantBase">
+    <defName>RI_Plant_TillandsiaDragon</defName>
+    <label>火龙草</label>
+    <description>火龙草是一种特殊的药草，在灵气充盈的土地上能更快的生长，这种植物的中心嫩芽是非常珍贵的药材。</description>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RI_Plant_TillandsiaDragon</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shadowData>
+        <volume>(0.2, 0.6, 0.2)</volume>
+      </shadowData>
+    </graphicData>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <fillPercent>0.20</fillPercent>
+    <pathCost>30</pathCost>
+    <ingestible />
+    <plant>
+      <fertilitySensitivity>0.5</fertilitySensitivity>
+      <growDays>6</growDays>
+      <harvestTag>Standard</harvestTag>
+      <harvestAfterGrowth>0.30</harvestAfterGrowth>
+      <harvestedThingDef>RawAgave</harvestedThingDef>
+      <harvestYield>10</harvestYield>
+      <harvestWork>300</harvestWork>
+      <visualSizeRange>0.9~1.4</visualSizeRange>
+      <topWindExposure>0.3</topWindExposure>
+      <wildClusterRadius>8</wildClusterRadius>
+      <wildClusterWeight>300</wildClusterWeight>
+      <wildOrder>2</wildOrder>
+       <sowTags>
+       <li>SoilSpiritual</li>
+      </sowTags>
+      <purpose>Food</purpose>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="PlantBase">
+    <defName>RI_Plant_LanternBerry</defName>
+    <label>提灯果</label>
+    <description>提灯果是一种奇妙的植物，其果实会散发淡淡的荧光，据推测是用来吸引昆虫传粉。</description>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RI_Plant_LanternBerry</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shadowData>
+        <volume>(0.1, 0.2, 0.1)</volume>
+      </shadowData>
+    </graphicData>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <fertilitySensitivity>0.15</fertilitySensitivity>
+      <growDays>6</growDays>
+      <immatureGraphicPath>Things/Plant/RI_Plant_LanternBerry_Immature</immatureGraphicPath>
+      <harvestYield>4</harvestYield>
+      <harvestTag>Standard</harvestTag>
+      <harvestAfterGrowth>0.3</harvestAfterGrowth>
+      <harvestedThingDef>Ambrosia</harvestedThingDef>
+      <visualSizeRange>0.6~1.1</visualSizeRange>
+      <topWindExposure>0.1</topWindExposure>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+      <sowTags>
+       <li>SoilSpiritual</li>
+      </sowTags>
+    </plant>
+  </ThingDef>
+
+</Defs>

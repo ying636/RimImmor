@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="ResourceVerbBase">
+		<defName>RI_Resource_SandalWoodLog</defName>
+		<label>檀木</label>
+		<description>Wood from trees or other fibrous plants. Useful for building structures and weapons. It is a good fuel for campfires and generators, and can be refined into chemfuel. In a pinch, a piece of wood can be used as a weapon or a leg.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RI_Resource_SandalWoodLog</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>-20</equippedAngleOffset>
+		<soundInteract>Wood_Drop</soundInteract>
+		<soundDrop>Wood_Drop</soundDrop>
+		<statBases>
+			<MarketValue>5</MarketValue>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Mass>0.4</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>0.5</DeteriorationRate>
+			<StuffPower_Armor_Sharp>0.6</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.6</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Heat>0.30</StuffPower_Armor_Heat>
+			<StuffPower_Insulation_Cold>7</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>3</StuffPower_Insulation_Heat>
+			<SharpDamageMultiplier>0.45</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.95</BluntDamageMultiplier>
+		</statBases>
+		<burnableByRecipe>true</burnableByRecipe>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<minRewardCount>10</minRewardCount>
+		<stuffProps>
+			<stuffAdjective>SandalWooden</stuffAdjective>
+			<categories>
+				<li>Woody</li>
+			</categories>
+			<commonality>1.00</commonality>
+			<color>(135,75,50)</color>
+			<constructEffect>ConstructWood</constructEffect>
+			<appearance>Planks</appearance>
+			<soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>0.65</MaxHitPoints>
+				<Beauty>5</Beauty>
+				<Flammability>1</Flammability>
+				<WorkToMake>0.7</WorkToMake>
+				<WorkToBuild>0.7</WorkToBuild>
+				<DoorOpenSpeed>1.2</DoorOpenSpeed>
+			</statFactors>
+			<canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+		</stuffProps>
+		<isTechHediff>true</isTechHediff>
+		<thingCategories>
+			<li>RI_Category_Resource</li>
+		</thingCategories>
+		<techHediffsTags>
+			<li>Poor</li>
+		</techHediffsTags>
+		<weaponClasses>
+			<li>Melee</li>
+			<li>MeleeBlunt</li>
+			<li>Medieval</li>
+		</weaponClasses>
+		<tools>
+			<li>
+				<label>log</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<allowedArchonexusCount>150</allowedArchonexusCount>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>RI_Resource_LiquidJade</defName>
+		<label>柔玉</label>
+		<description>柔玉是一种能吸收天地灵气的奇妙矿物。这种状态形似非牛顿流体的矿物是一种能够感应并吸收灵气的神奇物质，只能在地下岩层中少量发现，当用力凿击的时候矿物会四分五裂，但之后又会慢慢软化，如同晶莹剔透又滑腻的焦油一般。因为其珍贵的特性和难以储存的形态，这种矿物在市场上十分少见。</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RI_Resource_LiquidJade</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<stackLimit>50</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<MarketValue>58</MarketValue>
+			<Mass>0.2</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>2.0</DeteriorationRate>
+		</statBases>
+		<intricate>true</intricate>
+		<thingCategories>
+			<li>RI_Category_Resource</li>
+		</thingCategories>
+		<allowedArchonexusCount>10</allowedArchonexusCount>
+	</ThingDef>
+	
+</Defs>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--炼丹炉-->
+	<ThingDef ParentName="BenchBase">
+		<defName>RI_Building_LittleCauldrons</defName>
+		<label>小型炼丹炉</label>
+		<description>一个方便携带的小型炼丹炉。此炼丹炉可以用来炼制一品至二品的丹药，最高级的三品丹药需要更好的炼丹炉。</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<graphicData>
+			<texPath>Things/Building/LittleCauldrons/RI_Building_LittleCauldrons</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1.2,1.2)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>false</castEdgeShadows>
+		<staticSunShadowHeight>0.10</staticSunShadowHeight>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>45</costStuffCount>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>200</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(1,1)</size>
+		<designationCategory>RI_RimImmortals_Group</designationCategory>
+		<uiOrder>2110</uiOrder>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>160.0</fuelConsumptionRate>
+				<fuelCapacity>50.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>3</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>2.5</glowRadius>
+				<glowColor>(224,180,4,0)</glowColor>
+			</li>
+		</comps>
+		<building>
+			<paintable>true</paintable>
+			<isMealSource>true</isMealSource>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<!--<researchPrerequisites>
+			<li>Electricity</li>
+		</researchPrerequisites>-->
+	</ThingDef>
+
+	<!--大炼丹炉-->
+	<ThingDef ParentName="BenchBase">
+		<defName>RI_Building_Cauldrons</defName>
+		<label>炼丹炉</label>
+		<description>做药，啊，大药。</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Cauldrons/RI_Building_Cauldrons</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4.2,4.2)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>false</castEdgeShadows>
+		<staticSunShadowHeight>0.10</staticSunShadowHeight>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>45</costStuffCount>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>200</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,3)</size>
+		<designationCategory>RI_RimImmortals_Group</designationCategory>
+		<uiOrder>2110</uiOrder>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>160.0</fuelConsumptionRate>
+				<fuelCapacity>50.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>3</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>3.5</glowRadius>
+				<glowColor>(224,180,4,0)</glowColor>
+			</li>
+		</comps>
+		<building>
+			<paintable>true</paintable>
+			<isMealSource>true</isMealSource>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+		</building>
+		<designationHotKey>Misc8</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<!--<researchPrerequisites>
+			<li>Electricity</li>
+		</researchPrerequisites>-->
+	</ThingDef>
+	
+</Defs>

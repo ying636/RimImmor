@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--==================药材前置=================-->
+  <ThingDef Abstract="True" Name="OrganicProductBase" ParentName="ResourceBase">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>6</DeteriorationRate>
+      <Mass>0.05</Mass>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <healthAffectsPrice>false</healthAffectsPrice>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="RI_MedicalPlant_Base" ParentName="OrganicProductBase">
+    <ingestible>
+      <preferability>RawBad</preferability>
+      <tasteThought>RI_Thought_AteHerb</tasteThought>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+    </ingestible>
+    <statBases>
+      <Nutrition>0.05</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.3</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <thingCategories>
+      <li>RI_Category_DrugsMaterials</li>
+    </thingCategories>
+    <allowedArchonexusCount>50</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RI_MedicalPlant_Base">
+    <defName>RI_Resource_LingZhi</defName>
+    <label>灵芝</label>
+    <description>土属性药材，灵芝。成熟的灵芝是赭红色，散发出淡淡的光辉，味道微苦。这种药材营养极其丰富，能清理人体内部的废料，所以经常被用于调和刺激性的药材。</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/RawMedical/RI_Resource_LingZhi</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>23</MarketValue>
+    </statBases>
+    <ingestible>
+      <foodType>VegetableOrFruit</foodType>
+    </ingestible>
+	  <ingredient>
+		  <mergeCompatibilityTags>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">Fungus</li>
+		  </mergeCompatibilityTags>
+	  </ingredient>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="RI_MedicalPlant_Base">
+    <defName>RI_Resource_DuskyMushroom</defName>
+    <label>玄阴菇</label>
+    <description>水属性药材，玄阴菇。这种神秘的菌类只会生长在最潮湿，最黑暗的洞穴深处，暴露在光芒下会逐渐枯萎。关于这种药材的记录极少，但因为其蕴含丰富的营养，一些特殊丹药会使用到这种蘑菇，所以还是有无数人趋之若鹜。</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/RawMedical/RI_Resource_DuskyMushroom</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>34</MarketValue>
+    </statBases>
+    <ingestible>
+      <foodType>Fungus</foodType>
+    </ingestible>
+    <ingredient>
+      <mergeCompatibilityTags>
+        <li MayRequire="Ludeon.RimWorld.Ideology">Fungus</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="RI_MedicalPlant_Base">
+    <defName>RI_Resource_PlantainSeed</defName>
+    <label>车前子</label>
+    <description>木属性药材，车前子。车前子是车前草的种子，磨碎后作为药材使用。车前子带有疗愈的效果，能促进伤口愈合，并且带有轻微的杀菌效果，经常被用于各种疗伤药。</description>
+	<possessionCount>3</possessionCount>
+    <soundInteract>Grain_Drop</soundInteract>
+    <soundDrop>Grain_Drop</soundDrop>
+    <graphicData>
+      <texPath>Things/Item/Resource/RawMedical/RI_Resource_PlantainSeed</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>9</MarketValue>
+    </statBases>
+    <ingestible>
+      <foodType>Seed</foodType>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>40</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="RI_MedicalPlant_Base">
+    <defName>RI_Resource_SnowLotus</defName>
+    <label>雪莲</label>
+    <description>水属性药材，雪莲。盛开的雪莲花黄里透白，晶莹剔透。这种药材中蕴含极丰富的微量元素，药效极其强烈，在清热解毒的同时，据说还能打通人体经脉，治愈顽疾。</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/RawMedical/RI_Resource_SnowLotus</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>30</MarketValue>
+    </statBases>
+    <ingestible>
+      <foodType>VegetableOrFruit</foodType>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>25</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="RI_MedicalPlant_Base">
+    <defName>RI_Resource_LanternBerries</defName>
+    <label>提灯果</label>
+    <description>土属性药材，提灯果。这种果实如同一盏盏灯笼一般，散发出淡淡的光芒。但没什么味道，其药效十分温和，拨开表皮能发现，发光是因为其中的果核如同一盏小灯，散发出明亮的光。但在果实被摘下几天后，果核便渐渐不会发光，变得暗淡。</description>
+    <possessionCount>10</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/RawMedical/RI_Resource_LanternBerries</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>28</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>20</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <ingestible>
+      <preferability>RawTasty</preferability>
+      <tasteThought></tasteThought>
+      <foodType>VegetableOrFruit</foodType>
+    </ingestible>
+  </ThingDef>
+
+	<ThingDef ParentName="RI_MedicalPlant_Base">
+		<defName>RI_Resource_SilverGinseng</defName>
+		<label>银芯参</label>
+		<description>金属性药材，银芯参。经过长年累月生长的银芯参，内部如银子一般反射出金属的色泽。生长时间越长，银色的部分越多，越闪亮，药效也越强。其富含矿物质和营养，单单是切片用来泡水，也能令人神清气爽，浑身畅通。</description>
+		<soundInteract>Grain_Drop</soundInteract>
+		<soundDrop>Grain_Drop</soundDrop>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawMedical/RI_Resource_SilverGinseng</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>52</MarketValue>
+		</statBases>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>50</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="RI_MedicalPlant_Base">
+		<defName>RI_Resource_TillandsiaDragonShoot</defName>
+		<label>火龙芽</label>
+		<description>火属性药材，火龙芽。火龙芽是掐自火龙草中心最柔软的嫩芽，药效最好，味道奇辣无比。这种药材中蕴含极其猛烈的刺激性元素，能直接作用于人体的神经系统，常被用于各种兴奋剂，在某些地区已经禁止公开食用火龙芽。</description>
+		<soundInteract>Grain_Drop</soundInteract>
+		<soundDrop>Grain_Drop</soundDrop>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawMedical/RI_Resource_TillandsiaDragonShoot</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>52</MarketValue>
+		</statBases>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>50</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+  
+</Defs>

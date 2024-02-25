@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ================================== 炼药法门书 ====================================-->
+	<ThingDef ParentName="ResourceBase">
+		<defName>RI_BookA</defName>
+		<label>《伤寒杂病论》-炼药法门书</label>
+		<description>一本残破的古书，书名写着《伤寒杂病论》。此书是由东汉末年的医圣张仲景，集其毕生所学而成的一本著作，里面包含大量的疾病详解和药方，丹方。</description>
+		<graphicData>
+			<texPath>Things/Item/Books/RI_BookA</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Metal_Drop</soundInteract><!--声音有待替换-->
+		<soundDrop>Metal_Drop</soundDrop><!--声音有待替换-->
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>550</MarketValue><!--市场价格-->
+			<MaxHitPoints>50</MaxHitPoints>
+			<Mass>0.2</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>RI_Category_Books</li><!--新写的储存-->
+		</thingCategories>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li><!--要新写一个tag-->
+		</tradeTags>
+	</ThingDef>
+
+	<!-- ================================== 内丹法门书 ====================================-->
+	<ThingDef ParentName="ResourceBase">
+		<defName>RI_BookB</defName>
+		<label>《通玄真经》-内丹法门书</label>
+		<description>一本残破的古书，书名写着《通玄真经》。此书是春秋时期的谋士计然所著，里面包含各种天南地北的知识和哲学，为道教四部圣典之一。</description>
+		<graphicData>
+			<texPath>Things/Item/Books/RI_BookB</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>550</MarketValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Mass>0.2</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>RI_Category_Books</li>
+		</thingCategories>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+
+	<!-- ================================== 炼体法门书 ====================================-->
+	<ThingDef ParentName="ResourceBase">
+		<defName>RI_BookC</defName>
+		<label>《耕余剩技》-炼体法门书</label>
+		<description>一本残破的古书，书名写着《耕余剩技》。此书是明末著名武术家程宗猷，编写的一部武术著作，里面包含大量武术，棍法，枪法，刀法。</description>
+		<graphicData>
+			<texPath>Things/Item/Books/RI_BookC</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>550</MarketValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Mass>0.2</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>RI_Category_Books</li>
+		</thingCategories>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+
+</Defs>
+

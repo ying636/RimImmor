@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>RI_DropEnergyStone</defName>
+    <label>零食坠落</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>WhoXiuXian.RI_IncidentWorker_DropEnergyStone</workerClass>
+    <baseChance>1</baseChance>
+    <letterLabel>零食坠落</letterLabel>
+    <letterText>有神仙似了，掉你家了.</letterText>
+      <tale>MeteoriteImpact</tale>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>RI_MakeLINGMAI</defName>
+    <label>灵脉生成</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>WhoXiuXian.RI_IncidentWorker_MakeLINGMAI</workerClass>
+    <baseChance>1</baseChance>
+    <letterLabel>灵脉生成</letterLabel>
+    <letterText>呃啊</letterText>
+      <tale>MeteoriteImpact</tale>
+  </IncidentDef>
+</Defs>

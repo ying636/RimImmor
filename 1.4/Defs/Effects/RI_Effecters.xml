@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	
+	<EffecterDef>
+		<defName>RI_VajraBoxingEffector</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_DrifterEmoteChance</subEffecterClass>
+				<chancePerTick>0.1</chancePerTick>
+				<positionRadius>0.3</positionRadius>
+				<moteDef>RI_VajraBoxingMote</moteDef>
+				<speed>0.18~0.18</speed>
+				<rotation>0</rotation>
+				<angle>0~360</angle>
+			</li>
+		</children>
+	</EffecterDef>
+
+
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_VajraBoxingMote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.05</solidTime>
+			<fadeOutTime>0.1</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/VajraBoxing</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>RI_VajraBoxingFleck</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.15</fadeInTime>
+		<fadeOutTime>0.15</fadeOutTime>
+		<solidTime>0.08</solidTime>
+		<graphicData>
+			<graphicClass>Graphic_FleckPulse</graphicClass>
+			<shaderType>Mote</shaderType>
+			<texPath>Effects/VajraBoxing</texPath>
+			<drawSize>2.6</drawSize>
+		</graphicData>
+	</FleckDef>
+
+	<!--技能读条特效——内丹——周天功法-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_InternalFunction_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/InternalPellet/RI_Ability_InternalFunction_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——内丹——飞火-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_FlyFire_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0.50</fadeInTime>
+			<fadeOutTime>0.50</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/InternalPellet/RI_Ability_FlyFire_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——内丹——止观-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_Samatha_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/InternalPellet/RI_Ability_Samatha_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——内丹——导引-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_EnergyGuide_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/InternalPellet/RI_Ability_EnergyGuide_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——内丹——惊雷-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_Thunder_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0.5</fadeInTime>
+			<fadeOutTime>0.5</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/InternalPellet/RI_Ability_Thunder_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——内丹——雷铠-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_ElectricShield_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/InternalPellet/RI_Ability_ElectricShield_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——内丹——存神-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_EnergyRecovery_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/InternalPellet/RI_Ability_EnergyRecovery_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——内丹——玉虎鸣-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_DestructiveThunder_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/InternalPellet/RI_Ability_DestructiveThunder_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——炼药——养形-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_BodyTheory_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/ElixirsStrengthen/RI_Ability_BodyTheory_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——炼药——推拿术-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_Massage_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/ElixirsStrengthen/RI_Ability_Massage_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——炼药——针灸术-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_Acupuncture_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/ElixirsStrengthen/RI_Ability_Acupuncture_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——炼药——灵枢归还-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_SpiritProtection_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/ElixirsStrengthen/RI_Ability_SpiritProtection_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能读条特效——炼药——信春哥-->
+	<ThingDef ParentName="MoteBase">
+		<defName>RI_Ability_Resurrect_Mote</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.01</solidTime>
+			<fadeInTime>0</fadeInTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Effects/ElixirsStrengthen/RI_Ability_Resurrect_Mote</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<!--技能特效——寸拳-->
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>RI_OneInchPunchFleck</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.01</fadeInTime>
+		<fadeOutTime>0.10</fadeOutTime>
+		<solidTime>0.20</solidTime>
+		<graphicData>
+			<graphicClass>Graphic_FleckPulse</graphicClass>
+			<shaderType>Mote</shaderType>
+			<texPath>Effects/OneInchPunch</texPath>
+			<drawSize>2.6</drawSize>
+		</graphicData>
+	</FleckDef>
+</Defs>

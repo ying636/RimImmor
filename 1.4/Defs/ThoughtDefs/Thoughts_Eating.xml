@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+<!-- ======= 吃了药材 ========= -->
+  <ThoughtDef>
+    <defName>RI_Thought_AteHerb</defName>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>服用未经加工的药材</label>
+        <description>苦涩...难以下咽，或许不该浪费这药材。</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>	
+
+</Defs>

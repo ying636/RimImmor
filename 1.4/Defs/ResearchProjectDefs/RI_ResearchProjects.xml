@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef Name="RI_Research_Base" Abstract="True">
+		<tab>RI_ResearchTab</tab>
+	</ResearchProjectDef>
+
+  <!--=============================== 部落到中世纪的科技 ===================================-->
+
+  <!--=====最开始的，拿到功法书后研究======-->
+  <ResearchProjectDef ParentName="RI_Research_Base">
+    <defName>RI_ImmortalStart</defName>
+    <label>开始修仙</label>
+    <description>Sow the local biome's natural trees in your fields.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Neolithic</techLevel>
+      <researchViewX>0.00</researchViewX>
+      <researchViewY>2.80</researchViewY>
+    <tags>
+      <li>RI_ImmortalStart_Tag</li>
+    </tags>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="RI_Research_Base">
+    <defName>RI_InitialApproach</defName>
+    <label>法门树</label>
+    <description>Sow cocoa trees to create your own delicious chocolate. Eating chocolate fulfills the need for recreation, and it's valuable on the market too.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.80</researchViewY>
+    <prerequisites>
+      <li>RI_ImmortalStart</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_InitialApproach</defName>
+		<label>部落图腾</label>
+		<description>Sow cocoa trees to create your own delicious chocolate. Eating chocolate fulfills the need for recreation, and it's valuable on the market too.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>3.50</researchViewY>
+		<prerequisites>
+			<li>RI_ImmortalStart</li>
+		</prerequisites>
+	</ResearchProjectDef>
+  
+  <ResearchProjectDef ParentName="RI_Research_Base">
+    <defName>RI_InitialApproach_InternalPellet</defName>
+    <label>内丹-法门</label>
+    <description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>2</researchViewX>
+    <researchViewY>0</researchViewY>
+	  <prerequisites>
+		  <li>RI_InitialApproach</li>
+	  </prerequisites>
+  </ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_InitialApproach_PhysicalStrengthen</defName>
+		<label>炼体-法门</label>
+		<description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>0.7</researchViewY>
+		<prerequisites>
+			<li>RI_InitialApproach</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_InitialApproach_ElixirsStrengthen</defName>
+		<label>炼药-法门</label>
+		<description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>1.4</researchViewY>
+		<prerequisites>
+			<li>RI_InitialApproach</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_InitialApproach_A</defName>
+		<label>XX-法门</label>
+		<description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>2.1</researchViewY>
+		<prerequisites>
+			<li>RI_InitialApproach</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_InitialApproach_B</defName>
+		<label>XX-法门</label>
+		<description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>3.5</researchViewY>
+		<prerequisites>
+			<li>RI_InitialApproach</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_InitialApproach_C</defName>
+		<label>XX-法门</label>
+		<description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>4.2</researchViewY>
+		<prerequisites>
+			<li>RI_InitialApproach</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_InitialApproach_D</defName>
+		<label>XX-法门</label>
+		<description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>4.9</researchViewY>
+		<prerequisites>
+			<li>RI_InitialApproach</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_InitialApproach_E</defName>
+		<label>XX-法门</label>
+		<description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>5.6</researchViewY>
+		<prerequisites>
+			<li>RI_InitialApproach</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="RI_Research_Base">
+    <defName>RI_Cauldrons</defName>
+    <label>丹方</label>
+    <description>Make pemmican, a preserved mixture of meat and plant matter that doesn't go bad for a long time. Great for traveling.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>RI_InitialApproach_ElixirsStrengthen</li>
+		</prerequisites>
+    <researchViewX>3</researchViewX>
+    <researchViewY>1.4</researchViewY>
+  </ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_Exercise</defName>
+		<label>锻炼拳脚</label>
+		<description>Plant devilstrand, a slow-growing mushroom that yields an exceptionally tough, heat-resistant plant fiber.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<researchViewX>3</researchViewX>
+		<researchViewY>0.7</researchViewY>
+		<prerequisites>
+			<li>RI_InitialApproach_PhysicalStrengthen</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_FertileSoil</defName>
+		<label>药材种植</label>
+		<description>Make pemmican, a preserved mixture of meat and plant matter that doesn't go bad for a long time. Great for traveling.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>RI_Cauldrons</li>
+		</prerequisites>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1.4</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_TourmalineTech</defName>
+		<label>电气石技术</label>
+		<description>Make pemmican, a preserved mixture of meat and plant matter that doesn't go bad for a long time. Great for traveling.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>Smithing</li>
+		</prerequisites>
+		<researchViewX>6.00</researchViewX>
+		<researchViewY>2.8</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_UndergroundCrystalVein</defName>
+		<label>灵脉观测</label>
+		<description>Make pemmican, a preserved mixture of meat and plant matter that doesn't go bad for a long time. Great for traveling.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>RI_InitialApproach</li>
+			<li>Smithing</li>
+		</prerequisites>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>2.8</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_TourmalineTechExplode</defName>
+		<label>电气石技术爆发</label>
+		<description>Make pemmican, a preserved mixture of meat and plant matter that doesn't go bad for a long time. Great for traveling.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>Electricity</li>
+			<li>RI_InitialApproach</li>
+		</prerequisites>
+		<researchViewX>7.00</researchViewX>
+		<researchViewY>2.8</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_HumanMadeMaterial</defName>
+		<label>逆向合成矿物</label>
+		<description>Make pemmican, a preserved mixture of meat and plant matter that doesn't go bad for a long time. Great for traveling.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>RI_TourmalineTechExplode</li>
+		</prerequisites>
+		<researchViewX>8.00</researchViewX>
+		<researchViewY>1.8</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="RI_Research_Base">
+		<defName>RI_SteamMechine</defName>
+		<label>蒸汽机技术</label>
+		<description>Make pemmican, a preserved mixture of meat and plant matter that doesn't go bad for a long time. Great for traveling.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>RI_TourmalineTechExplode</li>
+		</prerequisites>
+		<researchViewX>8.00</researchViewX>
+		<researchViewY>2.8</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<RecipeDef Name="RI_RecipeBase_Medical" Abstract="True">
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workSkill>Crafting</workSkill>
+	</RecipeDef>
+
+
+	<RecipeDef ParentName="RI_RecipeBase_Medical">
+		<defName>RI_MakeElephantTuskPowder</defName>
+		<label>磨制象牙粉</label>
+		<description>将象牙磨成粉。</description>
+		<jobString>磨制象牙粉中。</jobString>
+		<workAmount>1400</workAmount>
+		<recipeUsers>
+			<li>RI_Building_ElixirsWorkbench</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ElephantTusk</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Resource_ElephantTuskPowder>5</RI_Resource_ElephantTuskPowder>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RI_RecipeBase_Medical">
+		<defName>RI_MakeGoldSand</defName>
+		<label>磨制金砂</label>
+		<description>将黄金磨成金砂。</description>
+		<jobString>磨制金砂中。</jobString>
+		<workAmount>1400</workAmount>
+		<recipeUsers>
+			<li>RI_Building_ElixirsWorkbench</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Gold</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<RI_Resource_GoldSand>5</RI_Resource_GoldSand>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+</Defs>

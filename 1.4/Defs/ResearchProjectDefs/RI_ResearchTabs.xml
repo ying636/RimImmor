@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- To add a research tab, make a new ResearchTabDef here and then set the <tab> field of your research project to match it -->
+  
+  <ResearchTabDef>
+    <defName>RI_ResearchTab</defName>
+    <label>边缘仙路B1</label>
+  </ResearchTabDef>
+
+  <!-- 泰南，你好贴心 -->
+
+</Defs>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ <IncidentDef>
+    <defName>RI_Incident_Sprout</defName>
+    <label>药草萌芽</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>WhoXiuXian.Incidents.RI_IncidentWorker_RandPlant</workerClass>
+    <baseChance>1.0</baseChance>
+    <letterLabel>Sprout_Text</letterLabel>
+    <letterText>几种罕见的药草萌芽了。</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <allowedBiomes>
+      <li>TropicalRainforest</li>
+      <li>TropicalSwamp</li>
+      <li>TemperateForest</li>
+      <li>TemperateSwamp</li>
+      <li>BorealForest</li>
+      <li>AridShrubland</li>
+    </allowedBiomes>
+  </IncidentDef>
+  </Defs>

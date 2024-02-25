@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>RI_Resource_JunGouBezoar</defName>
+		<label>菌狗胆石</label>
+		<description>一种有奇妙药效的药材。菌狗这种奔跑速度极快的动物，需要消耗许多能量，多余的胆固醇和菌狗体内特殊的营养物质会逐渐形成这种黄澄澄的固体。这种胆石蕴含了丰富的营养，具有奇妙的药效，但如果直接吃下可能导致中毒呕吐等不良反应。</description>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawMedical/RI_Resource_JunGouBezoar</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+			<MarketValue>37</MarketValue>
+			<Mass>0.02</Mass>
+			<Nutrition>0.03</Nutrition>
+			<FoodPoisonChanceFixedHuman>1</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<foodType>AnimalProduct</foodType>
+			<preferability>RawBad</preferability>
+			<joy>0.02</joy>
+			<joyKind>Gluttonous</joyKind>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>RawMeat_Eat</ingestSound>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+			<babiesCanIngest>false</babiesCanIngest>
+		</ingestible>
+		<thingCategories>
+			<li>RI_Category_DrugsMaterials</li>
+		</thingCategories>
+		<allowedArchonexusCount>10</allowedArchonexusCount>
+	</ThingDef>
+
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>RI_Resource_PiloseAntler</defName>
+		<label>玃如茸角</label>
+		<description>一种有奇妙药效的药材。玃如是一种长寿聪颖的动物，当它发现有猎人不怀好意地靠近，它会主动折断自己的茸角，以换得逃命的机会。玃如茸角生吃没有任何药效，只有配合其他药材，才能发挥出它全部的营养。</description>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawMedical/RI_Resource_PiloseAntler</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+			<MarketValue>44</MarketValue>
+			<Mass>0.02</Mass>
+			<Nutrition>0.02</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<foodType>AnimalProduct</foodType>
+			<preferability>RawBad</preferability>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>RawMeat_Eat</ingestSound>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+			<babiesCanIngest>false</babiesCanIngest>
+		</ingestible>
+		<thingCategories>
+			<li>RI_Category_DrugsMaterials</li>
+		</thingCategories>
+		<allowedArchonexusCount>10</allowedArchonexusCount>
+	</ThingDef>
+  
+</Defs>
