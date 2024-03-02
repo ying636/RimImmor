@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!--==========测试法门==========-->
+	<!--炼气功法——测试-->
+	<!--固基功法——测试-->
+	<!--金丹功法——测试-->
+	<!--元婴功法——测试-->
+	<!--合道功法——测试-->
+	<!--大乘功法——测试-->
+	<!--成仙功法——测试-->
+
+	<!--父类-->
+  <AbilityDef Name="RI_PsycastBase" Abstract="True">
+    <abilityClass>WhoXiuXian.Abilities.RI_PsyCastBase</abilityClass>
+    <category>Psychic</category>
+    <statBases>
+      <Ability_Duration>0</Ability_Duration>
+    </statBases>
+    <warmupSound>PsycastCastLoop</warmupSound>
+    <verbProperties>
+      <verbClass>Verb_CastPsycast</verbClass>
+      <range>24.9</range>
+      <requireLineOfSight>True</requireLineOfSight>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>False</canTargetAnimals>
+        <thingCategory>Item</thingCategory>
+        <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+</Defs>
+

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!--==========测试法门==========-->
+	<!--炼气功法——测试-->
+	<!--固基功法——测试-->
+	<!--金丹功法——测试-->
+	<!--元婴功法——测试-->
+	<!--合道功法——测试-->
+	<!--大乘功法——测试-->
+	<!--成仙功法——测试-->
+
+	<!--====================炼体法门====================-->
+
+	<!--炼气功法——结跏趺坐-->
+	<AbilityDef  ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>RI_Activity_LotusPosition</defName>
+		<label>结跏趺坐</label>
+		<description>内丹法门独有修炼功法以控制呼吸的频率和固定的动作来调整体态，令身体处于更好吸收灵气的状态。</description>
+		<iconPath>Ability/PhysicalStrengthen/RI_Ability_LotusPosition</iconPath>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>120</Ability_Duration>
+			<Ability_EffectRadius>10</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0</warmupTime>
+			<range>0</range>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_LotusPositionHediff</hediffDef>
+				<psychic>True</psychic>
+				<replaceExisting>True</replaceExisting>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!--固基功法——金刚拳-->
+	<AbilityDef ParentName="RI_PsycastBase">
+		<defName>RI_Ability_VajraBoxing</defName>
+		<label>金刚拳</label>
+		<description>单体攻击</description>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<iconPath>Ability/PhysicalStrengthen/RI_Ability_VajraBoxing</iconPath>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>3000</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>5</warmupTime>
+			<range>50</range>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetAnimals>True</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="WhoXiuXian.Abilities.CompProperties_AbilityVajraBoxing">
+				<beatback>false</beatback>
+				<damage>15</damage>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!--固基功法——撑筋拔骨-->
+	<AbilityDef  ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>RI_Ability_StretchingExercise</defName>
+		<label>撑筋拔骨</label>
+		<description>骨正筋柔，气血以流，通过往身体里引入灵气，来辅助筋骨的锻炼，能起到事半功倍的效果。</description>
+		<iconPath>Ability/PhysicalStrengthen/RI_Ability_StretchingExercise</iconPath>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>120</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0</warmupTime>
+			<range>0</range>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_StretchingExerciseHediff</hediffDef>
+				<psychic>True</psychic>
+				<replaceExisting>True</replaceExisting>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!--金丹功法——一苇轻功-->
+	<AbilityDef Name="QuickJump">
+		<defName>RI_Ability_QuickJump</defName>
+		<label>一苇轻功</label>
+		<description>一苇轻功</description>
+		<iconPath>Ability/PhysicalStrengthen/RI_Ability_QuickJump</iconPath>
+		<cooldownTicksRange>6</cooldownTicksRange>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>WhoXiuXian.RI_AbilityVerb_QuickJump</verbClass>
+			<label>一苇轻功</label>
+			<violent>true</violent>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.1</warmupTime>
+			<range>7</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>Longjump_Jump</soundCast>
+			<soundLanding>Longjump_Land</soundLanding>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+	</AbilityDef>
+
+	<ThingDef ParentName="PawnFlyerBase">
+		<defName>RI_QuickJumpFlyer</defName>
+		<thingClass>WhoXiuXian.RI_QuickJumpFlyer</thingClass>
+		<pawnFlyer>
+			<flightDurationMin>0.01</flightDurationMin>
+			<flightSpeed>10000</flightSpeed>
+		</pawnFlyer>
+	</ThingDef>
+	
+	<!--元婴功法——气血翻涌-->
+	<AbilityDef  ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>RI_BloodBoil</defName>
+		<label>气血翻涌</label>
+		<description>辅助功法，使用功法后给一个持续3小时的“狂意”buff，近战能力大大提高，但buff结束后会陷入虚弱状态，扣意识，扣操作</description>
+		<iconPath>Ability/PhysicalStrengthen/RI_Ability_BloodBoil</iconPath>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>120</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0</warmupTime>
+			<range>0</range>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_KY</hediffDef>
+				<psychic>True</psychic>
+				<replaceExisting>True</replaceExisting>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!--合道功法——寸拳-->
+	<AbilityDef ParentName="PsycastBase">
+		<defName>RI_Ability_OneInchPunch</defName>
+		<label>寸拳</label>
+		<description>击退特效拳</description>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<iconPath>Ability/PhysicalStrengthen/RI_Ability_OneInchPunch</iconPath>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>3000</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0</warmupTime>
+			<range>50</range>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetAnimals>True</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="WhoXiuXian.Abilities.CompProperties_AbilityVajraBoxing">
+				<beatback>true</beatback>
+				<damage>30</damage>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!--大乘功法——焚天-->
+	<AbilityDef Name="fentian">
+		<defName>RI_Ability_IncendiarySky</defName>
+		<label>焚天</label>
+		<description>爆炸出拳</description>
+		<iconPath>Ability/PhysicalStrengthen/RI_Ability_IncendiarySky</iconPath>
+		<cooldownTicksRange>6</cooldownTicksRange>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>WhoXiuXian.RI_AbilityVerb_BurningEarth</verbClass>
+			<label>焚天</label>
+			<violent>true</violent>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.5</warmupTime>
+			<range>19.9</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>Longjump_Jump</soundCast>
+			<soundLanding>Longjump_Land</soundLanding>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+	</AbilityDef>
+
+	<ThingDef ParentName="PawnFlyerBase">
+		<defName>RI_BurningEarthFlyer</defName>
+		<thingClass>WhoXiuXian.RI_BurningEarthFlyer</thingClass>
+		<pawnFlyer>
+			<flightDurationMin>0.05</flightDurationMin>
+			<flightSpeed>120</flightSpeed>
+		</pawnFlyer>
+	</ThingDef>
+
+	<!--成仙功法——修罗-->
+	<AbilityDef  ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>RI_Ability_Asura</defName>
+		<label>修罗</label>
+		<description>进入修罗状态，极大提高近战能力和全部肉体状态，减少功法消耗，几乎是无敌的。但是等buff过去，会进入极度虚弱状态，战斗力不如普通人</description>
+		<iconPath>Ability/PhysicalStrengthen/RI_Ability_Asura</iconPath>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>240</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0</warmupTime>
+			<range>0</range>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_AsuraHediff</hediffDef>
+				<psychic>True</psychic>
+				<replaceExisting>True</replaceExisting>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_ShadowWithMove</hediffDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>
+

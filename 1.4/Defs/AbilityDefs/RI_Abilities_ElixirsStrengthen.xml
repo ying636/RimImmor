@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!--==========测试法门==========-->
+	<!--炼气功法——测试-->
+	<!--固基功法——测试-->
+	<!--金丹功法——测试-->
+	<!--元婴功法——测试-->
+	<!--合道功法——测试-->
+	<!--大乘功法——测试-->
+	<!--成仙功法——测试-->
+	<!--成仙功法——测试-->
+	<!--成仙功法——测试-->
+	<!--成仙功法——测试-->
+	<!--成仙功法——测试-->
+
+	<!--====================炼药法门====================-->
+	
+	<!--炼气功法——养形-->	
+	<AbilityDef ParentName="RI_PsycastBase">
+		<defName>RI_Ability_BodyTheory</defName>
+		<label>养形</label>
+		<description>提高工作效率</description>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<iconPath>Ability/ElixirsStrengthen/RI_Ability_BodyTheory</iconPath>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>3000</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0.5</warmupTime>
+			<range>50</range>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetAnimals>True</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_BodyTheoryHediff</hediffDef>
+				<psychic>True</psychic>
+				<replaceExisting>True</replaceExisting>
+			</li>
+			<li Class="WhoXiuXian.Abilities.CompProperties_SpawnMoteCasting">
+				<moteCastDef>RI_Ability_BodyTheory_Mote</moteCastDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!--固基功法——推拿术-->
+	<AbilityDef ParentName="RI_PsycastBase">
+		<defName>RI_Ability_Massage</defName>
+		<label>推拿术</label>
+		<description>治愈一个包扎好的伤口</description>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<iconPath>Ability/ElixirsStrengthen/RI_Ability_Massage</iconPath>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>5</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0.3</warmupTime>
+			<range>5</range>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+				<canTargetAnimals>True</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_ManipulationHediff</hediffDef>
+				<psychic>True</psychic>
+				<replaceExisting>True</replaceExisting>
+			</li>
+			<li Class="WhoXiuXian.Abilities.CompProperties_SpawnMoteCasting">
+				<moteCastDef>RI_Ability_Massage_Mote</moteCastDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!--金丹功法——针灸术-->
+	<AbilityDef ParentName="RI_PsycastBase">
+		<defName>RI_Ability_Acupuncture</defName>
+		<label>针灸术</label>
+		<description>减少疼痛，加快恢复速度</description>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<iconPath>Ability/ElixirsStrengthen/RI_Ability_Acupuncture</iconPath>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>3000</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0.5</warmupTime>
+			<range>50</range>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetAnimals>True</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_AcupunctureHediff</hediffDef>
+				<psychic>True</psychic>
+				<replaceExisting>True</replaceExisting>
+			</li>
+			<li Class="WhoXiuXian.Abilities.CompProperties_SpawnMoteCasting">
+				<moteCastDef>RI_Ability_Acupuncture_Mote</moteCastDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!--大乘功法——逆转灵枢-->
+	<AbilityDef ParentName="RI_PsycastBase">
+		<defName>RI_Ability_SpiritProtection</defName>
+		<label>逆转灵枢</label>
+		<description>只有顶级的炼药师才能掌握的功法，通过丰富的医疗经验和灵气辅助，检视人体内的所有经脉，再以灵气凝结成人体组织，输入体内堵死的经脉，替换老去的细胞，从而实现返老还童的效果</description>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<iconPath>Ability/ElixirsStrengthen/RI_Ability_SpiritProtection</iconPath>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>5</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0.8</warmupTime>
+			<range>50</range>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+				<canTargetAnimals>True</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RI_ManipulationHediff</hediffDef>
+				<psychic>True</psychic>
+				<replaceExisting>True</replaceExisting>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+			</li>
+			<li Class="WhoXiuXian.Abilities.CompProperties_AbilityAgeReversal">
+			</li>
+			<li Class="WhoXiuXian.Abilities.CompProperties_SpawnMoteCasting">
+				<moteCastDef>RI_Ability_SpiritProtection_Mote</moteCastDef>
+			</li>
+		</comps>
+	</AbilityDef>
+	<!--成仙功法——信春哥-->
+	<AbilityDef ParentName="RI_PsycastBase">
+		<defName>RI_Ability_Resurrect</defName>
+		<label>丹魄还魂</label>
+		<description>只有顶级的炼药师才能掌握的功法，在白骨上生长出肌肉和血管，就连失去的大脑也能填补，最后用灵气模拟出脑细胞，实现起死回生。</description>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<iconPath>Ability/ElixirsStrengthen/RI_Ability_Resurrect</iconPath>
+		<statBases>
+			<Ability_EntropyGain>0</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+			<Ability_Duration>5</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>10</warmupTime>
+			<range>50</range>
+			<targetParams>
+				<canTargetCorpses>True</canTargetCorpses>
+				<canTargetAnimals>True</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="WhoXiuXian.Abilities.CompProperties_AbilityResurrect">
+			</li>
+			<li Class="WhoXiuXian.Abilities.CompProperties_SpawnMoteCasting">
+				<moteCastDef>RI_Ability_Resurrect_Mote</moteCastDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+
+</Defs>
+
